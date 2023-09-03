@@ -1,0 +1,34 @@
+@import './scss/bootstrap';
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    list-style: none;
+}
+#root{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main{
+    display: flex;
+    align-items: center;
+    flex: 1 0 auto;
+}
+.mainbg{
+    background-color: lemonchiffon;
+}
+.card{
+    border: none;
+    // box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 25px 0px !important;
+    box-shadow: 15px 15px 14px -1px rgba(115,109,109,1);
+-webkit-box-shadow: 15px 15px 14px -1px rgba(115,109,109,1);
+-moz-box-shadow: 15px 15px 14px -1px rgba(115,109,109,1);
+}
+
+.login-div{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
