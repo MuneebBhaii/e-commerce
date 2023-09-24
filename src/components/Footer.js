@@ -1,4 +1,5 @@
 import React from 'react'
+import {FacebookOutlined , YoutubeFilled , InstagramOutlined , LinkedinOutlined} from '@ant-design/icons'
 // logo
 import logo from '../Assets/Logo/logo(1).png'
 export default function Footer() {
@@ -7,11 +8,15 @@ export default function Footer() {
         <>
         <div className="container py-5">
             <div className="row">
-                <div className="col-12 col-md-4 col-lg-3">
+                <div className="col-12 mb-5 col-md-5 col-lg-4 mb-lg-0">
                     <img src={logo} alt="📙 ABCbook logo" />
                     <p className='py-4'>Get the breathing space now, and we’ll extend your term at the other end year for go.</p>
+                    <a href=""><FacebookOutlined className='social_media facebook m-0'/></a>
+                    <a href=""><InstagramOutlined className='social_media instagram'/></a>
+                    <a href=""><LinkedinOutlined className='social_media linkedin'/></a>
+                    <a href=""><YoutubeFilled className='social_media youtube'/></a>
                 </div>
-                <div className="col-12 col-md-4 col-lg-3">
+                <div className="col-12 col-md-3 col-lg-2">
                     <h5 className='pb-4'>Book Category</h5>
                     <ul className='p-0 m-0 category_list'>
                         <li>history</li>
@@ -22,7 +27,7 @@ export default function Footer() {
                     </ul>
                 </div>
                 <div className="col-12 mb-3 col-md-4 col-lg-3 mb-lg-0">
-                    <h5 className='pb-4 invisible d-sm-none d-md-block'>Book Category</h5>
+                    <h5 className='pb-4 invisible d-none d-md-block'>Book Category</h5>
                     <ul className='p-0 m-0 category_list'>
                         <li>Biography</li>
                         <li>Astrology</li>
