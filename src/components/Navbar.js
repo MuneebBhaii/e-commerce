@@ -1,30 +1,43 @@
-import React, { useState } from 'react'
-import { Link } from "react-router-dom"
-import Logo from '../Assets/Logo/logo(1).png'
-import { Badge } from 'antd'
-import {
-    ShoppingCartOutlined,
-    SearchOutlined
-} from '@ant-design/icons'
+import React from 'react'
+import {MenuOutlined}from '@ant-design/icons'
 export default function Navbar() {
-    const [count, setCoount] = useState(5)
-    return (
-        <div className='container'>
-            <header>
-            <div className="brand_logo">
-                <img src={Logo} alt="{Logo}" />
-            </div>
-            <div className="search_bar">
-                <input type="search" placeholder='Search book by author or publisher' />
-                <SearchOutlined className='h2 text-danger me-1' />
-            </div>
-            <Link to="/Auth/Login" className='text-decoration-none text-dark'>Track Order</Link>
-            <div className="cart">
-            <ShoppingCartOutlined className='h1' />
-            <Badge className='badge' count={count}></Badge>
-            </div>
-            <button className='auth'>Sign in</button>
-            </header>
+  return (
+    <nav className="container-fluid navbar navbar-expand-lg navbar-light">
+      <div className="container">
+      <a class="navbar-brand" href="#"></a>
+        <button className="navbar-toggler bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span className='fw-bold'>MENU <MenuOutlined/></span>
+        </button>
+        <div className="collapse navbar-collapse offset-lg-4" id="navbarSupportedContent">
+          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+            <li className="nav-item">
+              <a className="nav-link active" aria-current="page" href="#">Home</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">Categories</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" href="#">About</a>
+            </li>
+            <li className="nav-item dropdown">
+              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pages
+              </a>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a className="dropdown-item" href="#">Action</a></li>
+                <li><a className="dropdown-item" href="#">Another action</a></li>
+                <li><a className="dropdown-item" href="#">Something else here</a></li>
+              </ul>
+            </li>
+            <li className="nav-item">
+            <a className="nav-link" href="#">Blog</a>
+            </li>
+            <li className="nav-item">
+            <a className="nav-link" href="#">Contect</a>
+            </li>
+          </ul>
         </div>
-    )
+      </div>
+    </nav>
+  )
 }
