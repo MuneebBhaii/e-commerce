@@ -1,9 +1,10 @@
 import React from 'react'
-import { Carousel, Rate } from 'antd';
-// pagws 
+import { Rate } from 'antd';
+// components 
 import Header from '../../components/Header'
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer';
+import Subcriber from '../../components/Subcriber'
 // images
 import slideA from "../../Assets/Image/christopher-gower-m_HRfLhgABo-unsplash.jpg"
 import slideB from '../../Assets/Image/pexels-ian-turnell-709552.jpg'
@@ -16,11 +17,14 @@ import picD from '../../Assets/pic/best_selling4.jpg'
 import picE from '../../Assets/pic/best_selling5.jpg'
 import picF from '../../Assets/pic/best_selling6.jpg'
 import hacker from '../../Assets/pic/Hacker.webp'
+import Browse from '../../components/Browse';
 export default function Home() {
   return (
     <>
+      {/* component */}
       <Header />
       <section className='section_first'>
+        {/* component */}
         <Navbar />
         <div id="carouselExampleCaptions" className="carousel slide container" data-bs-ride="carousel">
           <div className="carousel-indicators">
@@ -30,7 +34,7 @@ export default function Home() {
           </div>
           <div className="carousel-inner">
             <div className="carousel-item active">
-              <img src={slideA} className="d-block w-100" alt="slide_image" />
+              <img src={slideA} className="d-block w-100" alt="slide_pic" />
               <div className="carousel-caption d-md-block">
                 <span className='bg-light text-dark px-3 py-0 rounded-5'>Science Fiction</span>
                 <h1>The History of phippino</h1>
@@ -38,7 +42,7 @@ export default function Home() {
               </div>
             </div>
             <div className="carousel-item">
-              <img src={slideB} className="d-block w-100" alt="slide_image" />
+              <img src={slideB} className="d-block w-100" alt="slide_pic" />
               <div className="carousel-caption d-md-block">
                 <span className='bg-light text-dark px-3 py-0 rounded-5'>Science Fiction</span>
                 <h1>The History of phippino</h1>
@@ -46,7 +50,7 @@ export default function Home() {
               </div>
             </div>
             <div className="carousel-item">
-              <img src={slideC} className="d-block w-100" alt="slide_image" />
+              <img src={slideC} className="d-block w-100" alt="slide_pic" />
               <div className="carousel-caption d-md-block">
                 <span className='bg-light text-dark px-3 py-0 rounded-5'>Science Fiction</span>
                 <h1>The History of phippino</h1>
@@ -62,7 +66,7 @@ export default function Home() {
           <div className="carousel-inner carousel_card">
             <div className="carousel-item active">
               <div className="card">
-                <img src={picA} className="card-img-top" alt="product image" />
+                <img src={picA} className="card-img-top" alt="product pic" />
                 <div className="card-body">
                   <h5 className="card-title">Moon Dance</h5>
                   <p className="card-text text_light">J.R Rain</p>
@@ -78,7 +82,7 @@ export default function Home() {
             </div>
             <div className="carousel-item">
               <div className="card">
-                <img src={picB} className="card-img-top" alt="product image" />
+                <img src={picB} className="card-img-top" alt="product pic" />
                 <div className="card-body">
                   <h5 className="card-title">Moon Dance</h5>
                   <p className="card-text text_light">J.R Rain</p>
@@ -94,7 +98,7 @@ export default function Home() {
             </div>
             <div className="carousel-item">
               <div className="card">
-                <img src={picC} className="card-img-top" alt="product image" />
+                <img src={picC} className="card-img-top" alt="product pic" />
                 <div className="card-body">
                   <h5 className="card-title">Moon Dance</h5>
                   <p className="card-text text_light">J.R Rain</p>
@@ -110,7 +114,7 @@ export default function Home() {
             </div>
             <div className="carousel-item">
               <div className="card">
-                <img src={picD} className="card-img-top" alt="product image" />
+                <img src={picD} className="card-img-top" alt="product pic" />
                 <div className="card-body">
                   <h5 className="card-title">Moon Dance</h5>
                   <p className="card-text text_light">J.R Rain</p>
@@ -126,7 +130,7 @@ export default function Home() {
             </div>
             <div className="carousel-item">
               <div className="card">
-                <img src={picE} className="card-img-top" alt="product image" />
+                <img src={picE} className="card-img-top" alt="product pic" />
                 <div className="card-body">
                   <h5 className="card-title">Moon Dance</h5>
                   <p className="card-text text_light">J.R Rain</p>
@@ -142,7 +146,7 @@ export default function Home() {
             </div>
             <div className="carousel-item">
               <div className="card">
-                <img src={picF} className="card-img-top" alt="product image" />
+                <img src={picF} className="card-img-top" alt="product pic" />
                 <div className="card-body">
                   <h5 className="card-title">Moon Dance</h5>
                   <p className="card-text text_light">J.R Rain</p>
@@ -180,7 +184,20 @@ export default function Home() {
                 <div className="carousel-inner w-75 m-auto">
                   <div className="carousel-item active">
                     <div className="silde_box d-block d-lg-flex justify-content-lg-between align-items-lg-center">
-                      <img src={slideA} className="my-5" alt="product_Image" />
+                      <img src={slideA} className="my-5" alt="product_pic" />
+                      <div className="text ps-lg-2">
+                        <h2>The Rage of Dragons</h2>
+                        <p>By Evar Winter</p>
+                        <ins>$50.00</ins>
+                        <Rate allowHalf defaultValue={4.5} className='text-white' />
+                        <span className='p'>(120 Review)</span>
+                        <button className='mb-2'>View details</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="carousel-item">
+                    <div className="silde_box d-block d-lg-flex justify-content-lg-between align-items-lg-center">
+                      <img src={slideB} className="my-5" alt="product_pic" />
                       <div className="text ps-lg-2">
                         <h2>The Rage of Dragons</h2>
                         <p>By Evar Winter</p>
@@ -193,20 +210,7 @@ export default function Home() {
                   </div>
                   <div className="carousel-item">
                     <div className="silde_box d-block d-lg-flex justify-content-lg-between align-items-lg-center">
-                      <img src={slideB} className="my-5" alt="product_Image" />
-                      <div className="text ps-lg-2">
-                        <h2>The Rage of Dragons</h2>
-                        <p>By Evar Winter</p>
-                        <ins>$50.00</ins>
-                        <Rate allowHalf defaultValue={4.5} className='text-white' />
-                        <span className='p'>(120 Review)</span>
-                        <button>View details</button>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="carousel-item">
-                    <div className="silde_box d-block d-lg-flex justify-content-lg-between align-items-lg-center">
-                      <img src={slideC} className="my-5" alt="product_Image" />
+                      <img src={slideC} className="my-5" alt="product_pic" />
                       <div className="text ps-lg-2">
                         <h2>The Rage of Dragons</h2>
                         <p>By Evar Winter</p>
@@ -267,7 +271,7 @@ export default function Home() {
         <div className="row">
           <div className="col-12 col-sm-6 col-md-4 col-lg-2">
             <div className="card flex_card">
-              <img src={picA} className="flex_card_img" alt="product image" />
+              <img src={picA} className="flex_card_img" alt="product pic" />
               <div className='card_border'>
                 <div className="card-body ">
                   <h5 className="card-title">Moon Dance</h5>
@@ -285,7 +289,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-2">
             <div className="card flex_card">
-              <img src={picB} className="flex_card_img" alt="product image" />
+              <img src={picB} className="flex_card_img" alt="product pic" />
               <div className='card_border'>
                 <div className="card-body ">
                   <h5 className="card-title">Moon Dance</h5>
@@ -303,7 +307,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-2">
             <div className="card flex_card">
-              <img src={picC} className="flex_card_img" alt="product image" />
+              <img src={picC} className="flex_card_img" alt="product pic" />
               <div className='card_border'>
                 <div className="card-body ">
                   <h5 className="card-title">Moon Dance</h5>
@@ -321,7 +325,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-2">
             <div className="card flex_card">
-              <img src={picD} className="flex_card_img" alt="product image" />
+              <img src={picD} className="flex_card_img" alt="product pic" />
               <div className='card_border'>
                 <div className="card-body ">
                   <h5 className="card-title">Moon Dance</h5>
@@ -339,7 +343,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-2">
             <div className="card flex_card">
-              <img src={picE} className="flex_card_img" alt="product image" />
+              <img src={picE} className="flex_card_img" alt="product pic" />
               <div className='card_border'>
                 <div className="card-body ">
                   <h5 className="card-title">Moon Dance</h5>
@@ -357,7 +361,7 @@ export default function Home() {
           </div>
           <div className="col-12 col-sm-6 col-md-4 col-lg-2">
             <div className="card flex_card">
-              <img src={picF} className="flex_card_img" alt="product image" />
+              <img src={picF} className="flex_card_img" alt="product pic" />
               <div className='card_border'>
                 <div className="card-body ">
                   <h5 className="card-title">Moon Dance</h5>
@@ -376,13 +380,8 @@ export default function Home() {
         </div>
       </div>
       {/* section button */}
-      <div className="container py-5">
-        <div className="row">
-          <div className="col d-flex justify-content-center align-items-center">
-            <button className='browseMore'>Browse More</button>
-          </div>
-        </div>
-      </div>
+      {/* browse component */}
+      <Browse/>
       {/* section five */}
       <div className="container py-5">
         <div className="row">
@@ -407,22 +406,12 @@ export default function Home() {
         </div>
       </div>
       {/* section six*/}
-      <div className="container pb-5">
-        <div className="row">
-          <div className="col-12">
-            <div className='bg_img'>
-              <div className='col-md-9 offset-md-1 col-lg-8 offset-lg-2 col-xl-6 offset-xl-3 text-center'>
-                <h1>Join Newsletter</h1>
-                <p>Lorem started its journey with cast iron (CI) products in 1980. The initial main objective was to ensure pure water and affordable irrigation.</p>
-                <input className='col-12 mb-2 col-md-6 mb-md-0 col-lg-5 offset-lg-1' type="email" name="email" id='subcriber_email' placeholder='Enter your email' />
-                <button className='Subcribe col-12 col-md-4 offset-md-1 col-lg-3'>Subcribe</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      {/* component */}
+      <Subcriber />
+
       {/* footer */}
-      <Footer/>
+      {/* component */}
+      <Footer />
     </>
   )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import {FacebookOutlined , YoutubeFilled , InstagramOutlined , LinkedinOutlined} from '@ant-design/icons'
 // logo
 import logo from '../Assets/Logo/logo(1).png'
+import { Link } from 'react-router-dom'
 export default function Footer() {
     const year = new Date().getFullYear()
     return (
@@ -39,11 +40,11 @@ export default function Footer() {
                 <div className="col-12 col-lg-3">
                 <h5 className='pb-4'>Site Map</h5>
                     <ul className='p-0 m-0 category_list'>
-                        <li>Home</li>
-                        <li>About Us</li>
-                        <li>FAQs</li>
-                        <li>Blog</li>
-                        <li>Contact</li>
+                        <li><Link to='/'>Home</Link></li>
+                        <li><Link to='About'>About Us</Link></li>
+                        <li><Link to=''>FAQs</Link></li>
+                        <li><Link to='Blog'>Blog</Link></li>
+                        <li><Link to='Contect'>Contect</Link></li>
                     </ul>
                 </div>
             </div>
@@ -52,7 +53,7 @@ export default function Footer() {
         <div className="container pt-5">
             <div className="row">
                 <div className="col text-center">
-                    <p className='fs-5'>Copyright &copy; <span>{year}</span> All rights reserved || E-Commerce website is made with 🧡 by <span className='developer'>Muhammad Muneeb safdar</span></p>
+                    <p className='fs-5'>Copyright &copy; <span>{year}</span> All rights reserved || E-Commerce website is made with 🧡 by <span className='developer'>Muhammad Muneeb</span></p>
                 </div>
             </div>
         </div>
