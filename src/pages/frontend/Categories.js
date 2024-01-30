@@ -1,10 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Rate, Slider } from 'antd';
 // components
-import Header from '../../components/Header'
-import Navbar from '../../components/Navbar'
-import Subcriber from '../../components/Subcriber'
-import Footer from '../../components/Footer'
 import Browse from '../../components/Browse'
 // pic
 import picA from '../../Assets/pic/best_selling1.jpg'
@@ -15,12 +11,27 @@ import picE from '../../Assets/pic/best_selling5.jpg'
 import picF from '../../Assets/pic/best_selling6.jpg'
 
 export default function Categories() {
+  let minValue = 1000
+  let maxValue = 5000
+  let difference = 100
+  const [range, setRange] = useState([maxValue, minValue + difference]);
+  const handleChange = (values) => {
+    const [min, max] = values;
+
+    // Ensure a minimum difference of 50 between min and max
+    if (max - min < difference) {
+      // Adjust the min or max to satisfy the minimum difference
+      if (min + difference <= maxValue) {
+        setRange([min, min + difference]);
+      } else {
+        setRange([max - difference, max]);
+      }
+    } else {
+      setRange([min, max]);
+    }
+  };
   return (
     <>
-      {/* Header component */}
-      <Header />
-      {/* Navbar component */}
-      <Navbar />
       {/* categoies_cover */}
       <div className="container py-5">
         <div className="row">
@@ -69,12 +80,19 @@ export default function Categories() {
             {/* filter price */}
             <h5 className='mt-4'>Filter by Price</h5>
             <Slider
-              range={{
-                draggableTrack: true,
-              }}
-              defaultValue={[20, 50]}
+              range
+              min={minValue}
+              max={maxValue}
+              step={1}
+              value={range}
+              onChange={handleChange}
             />
-            <select name="Filter By Rating" id='ratingFilter'>
+            <div className="price_input">
+              <div className="field">{range[0]}</div>
+              <div className="separater">to</div>
+              <div className="field">{range[1]}</div>
+            </div>
+            <select name="Filter By Rating" id='ratingFilter' className='mt-5'>
               <option value="Filter By Rating">Filter By Rating</option>
               <option value="5 star Rating">⭐⭐⭐⭐⭐</option>
               <option value="4 star Rating">⭐⭐⭐⭐</option>
@@ -82,6 +100,70 @@ export default function Categories() {
               <option value="2 star Rating">⭐⭐</option>
               <option value="1 star Rating">⭐</option>
             </select>
+            {/* filter */}
+            <h5 className='mt-3'>Filter by Publisher</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck1" />
+              <label class="form-check-label" for="flexCheck1">
+                Green Publisher
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck2" />
+              <label class="form-check-label" for="flexCheck2">
+                Anondo Publisher
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck3" />
+              <label class="form-check-label" for="flexCheck3">
+                Rinku Publisher
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck4" />
+              <label class="form-check-label" for="flexCheck4">
+                Sheba Publisher
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck5" />
+              <label class="form-check-label" for="flexCheck5">
+                Red Publisher
+              </label>
+            </div>
+            {/* auther name */}
+            <h5 className='mt-3'>Filter by Genres</h5>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck1" />
+              <label class="form-check-label" for="flexCheck1">
+                Buster Hyman
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck2" />
+              <label class="form-check-label" for="flexCheck2">
+                Phil Harmonic
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck3" />
+              <label class="form-check-label" for="flexCheck3">
+                Cam L. Toe
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck4" />
+              <label class="form-check-label" for="flexCheck4">
+                Otto Matic
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheck5" />
+              <label class="form-check-label" for="flexCheck5">
+                Juan Annatoo
+              </label>
+            </div>
           </div>
           <div className="col-sm-6 col-md-9 col-lg-9 ">
             <div className="row">
@@ -319,10 +401,6 @@ export default function Categories() {
           </div>
         </div>
       </div>
-      {/* Subcriber component */}
-      <Subcriber />
-      {/* Footer component */}
-      <Footer />
     </>
   )
 }

@@ -1,10 +1,7 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Rate } from 'antd';
 // components 
-import Header from '../../components/Header'
-import Navbar from '../../components/Navbar'
-import Footer from '../../components/Footer';
-import Subcriber from '../../components/Subcriber'
+import CardCarousel from '../../components/cro'
 // images
 import slideA from "../../Assets/Image/christopher-gower-m_HRfLhgABo-unsplash.jpg"
 import slideB from '../../Assets/Image/pexels-ian-turnell-709552.jpg'
@@ -18,14 +15,12 @@ import picE from '../../Assets/pic/best_selling5.jpg'
 import picF from '../../Assets/pic/best_selling6.jpg'
 import hacker from '../../Assets/pic/Hacker.webp'
 import Browse from '../../components/Browse';
+import { NavLink } from 'react-router-dom';
+import GoTop from '../../components/GoTop';
 export default function Home() {
   return (
     <>
-      {/* component */}
-      <Header />
       <section className='section_first'>
-        {/* component */}
-        <Navbar />
         <div id="carouselExampleCaptions" className="carousel slide container" data-bs-ride="carousel">
           <div className="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
@@ -59,117 +54,9 @@ export default function Home() {
             </div>
           </div>
         </div>
-
         <p className='div_text'>Best Selling Books Ever</p>
-
-        <div id="carouselExampleControls" className="carousel slide container card_carousel" data-bs-ride="carousel">
-          <div className="carousel-inner carousel_card">
-            <div className="carousel-item active">
-              <div className="card">
-                <img src={picA} className="card-img-top" alt="product pic" />
-                <div className="card-body">
-                  <h5 className="card-title">Moon Dance</h5>
-                  <p className="card-text text_light">J.R Rain</p>
-                </div>
-                <div className='card-body py-0'>
-                  <Rate allowHalf defaultValue={4.5} />
-                </div>
-                <div className="card-body pt-0 d-flex justify-content-between">
-                  <span className="card-text text_light mt-2">(<span className='text-danger'>120 </span> Review)</span>
-                  <span className="card-text text-danger h3">$50</span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="card">
-                <img src={picB} className="card-img-top" alt="product pic" />
-                <div className="card-body">
-                  <h5 className="card-title">Moon Dance</h5>
-                  <p className="card-text text_light">J.R Rain</p>
-                </div>
-                <div className='card-body py-0'>
-                  <Rate allowHalf defaultValue={4.5} />
-                </div>
-                <div className="card-body pt-0 d-flex justify-content-between">
-                  <span className="card-text text_light mt-2">(<span className='text-danger'>120 </span> Review)</span>
-                  <span className="card-text text-danger h3">$50</span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="card">
-                <img src={picC} className="card-img-top" alt="product pic" />
-                <div className="card-body">
-                  <h5 className="card-title">Moon Dance</h5>
-                  <p className="card-text text_light">J.R Rain</p>
-                </div>
-                <div className='card-body py-0'>
-                  <Rate allowHalf defaultValue={4.5} />
-                </div>
-                <div className="card-body pt-0 d-flex justify-content-between">
-                  <span className="card-text text_light mt-2">(<span className='text-danger'>120 </span> Review)</span>
-                  <span className="card-text text-danger h3">$50</span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="card">
-                <img src={picD} className="card-img-top" alt="product pic" />
-                <div className="card-body">
-                  <h5 className="card-title">Moon Dance</h5>
-                  <p className="card-text text_light">J.R Rain</p>
-                </div>
-                <div className='card-body py-0'>
-                  <Rate allowHalf defaultValue={4.5} />
-                </div>
-                <div className="card-body pt-0 d-flex justify-content-between">
-                  <span className="card-text text_light mt-2">(<span className='text-danger'>120 </span> Review)</span>
-                  <span className="card-text text-danger h3">$50</span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="card">
-                <img src={picE} className="card-img-top" alt="product pic" />
-                <div className="card-body">
-                  <h5 className="card-title">Moon Dance</h5>
-                  <p className="card-text text_light">J.R Rain</p>
-                </div>
-                <div className='card-body py-0'>
-                  <Rate allowHalf defaultValue={4.5} />
-                </div>
-                <div className="card-body pt-0 d-flex justify-content-between">
-                  <span className="card-text text_light mt-2">(<span className='text-danger'>120 </span> Review)</span>
-                  <span className="card-text text-danger h3">$50</span>
-                </div>
-              </div>
-            </div>
-            <div className="carousel-item">
-              <div className="card">
-                <img src={picF} className="card-img-top" alt="product pic" />
-                <div className="card-body">
-                  <h5 className="card-title">Moon Dance</h5>
-                  <p className="card-text text_light">J.R Rain</p>
-                </div>
-                <div className='card-body py-0'>
-                  <Rate allowHalf defaultValue={4.5} />
-                </div>
-                <div className="card-body pt-0 d-flex justify-content-between">
-                  <span className="card-text text_light mt-2">(<span className='text-danger'>120 </span> Review)</span>
-                  <span className="card-text text-danger h3">$50</span>
-                </div>
-              </div>
-            </div>
-          </div>
-          <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-            <span className="carousel-control-prev-icon navbar-light" aria-hidden="true"></span>
-            <span className="visually-hidden">Previous</span>
-          </button>
-          <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-            <span className="carousel-control-next-icon" aria-hidden="true"></span>
-            <span className="visually-hidden">Next</span>
-          </button>
-        </div>
+        {/* component */}
+        <CardCarousel />
       </section>
       {/* second section */}
       <section className='section_second container py-2 px-0'>
@@ -256,11 +143,11 @@ export default function Home() {
           <div className="col">
             <div className="buttons ">
               <div className="col">
-                <button className='bg-danger text-white'>All</button>
-                <button>Horror</button>
-                <button>Thriller</button>
-                <button className='text-nowrap'>Science Fiction</button>
-                <button>History</button>
+                <NavLink to="/">All</NavLink>
+                <NavLink to="javascript:void(0)" >Horror</NavLink>
+                <NavLink to="javascript:void(0)" >Thriller</NavLink>
+                <NavLink to="javascript:void(0)" className='text-nowrap'>Science Fiction</NavLink>
+                <NavLink to="javascript:void(0)" >History</NavLink>
               </div>
             </div>
           </div>
@@ -381,7 +268,7 @@ export default function Home() {
       </div>
       {/* section button */}
       {/* browse component */}
-      <Browse/>
+      <Browse />
       {/* section five */}
       <div className="container py-5">
         <div className="row">
@@ -405,13 +292,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      {/* section six*/}
-      {/* component */}
-      <Subcriber />
-
-      {/* footer */}
-      {/* component */}
-      <Footer />
+     <GoTop/> 
     </>
   )
 }

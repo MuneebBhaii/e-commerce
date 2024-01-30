@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="container">
       <Link class="navbar-brand" to="/"></Link>
         <button className="navbar-toggler bg-dark text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span className='fw-bold'>MENU <MenuOutlined/></span>
+          <span className='fw-bold'>MENU</span>
         </button>
         <div className="collapse navbar-collapse offset-lg-4" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -18,7 +18,7 @@ export default function Navbar() {
               <Link className="nav-link" to="/Categories">Categories</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link">About</Link>
+              <Link className="nav-link" to="/About">About</Link>
             </li>
             <li className="nav-item dropdown">
               <Link className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -31,10 +31,10 @@ export default function Navbar() {
               </ul>
             </li>
             <li className="nav-item">
-            <Link className="nav-link">Blog</Link>
+            <Link className="nav-link" to="/Blog">Blog</Link>
             </li>
             <li className="nav-item">
-            <Link className="nav-link">Contect</Link>
+            <Link className="nav-link" to="/Contect">Contect</Link>
             </li>
           </ul>
         </div>
